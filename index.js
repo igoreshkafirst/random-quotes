@@ -5,14 +5,21 @@ import { handleQuote } from './src/handlers/quote.js';
 let currentQuote = null;
 
 function setCurrentQuote(quote) {
+  // console.log(currentQuote);
   currentQuote = quote;
 }
 
 const favoritesContainer = document.getElementById('favorites-container');
 const favoriteBtn = document.getElementById('favorite-btn');
 hideFavoriteBtn(favoriteBtn);
-favoriteBtn.addEventListener('click', () =>
-  toggleFavorite(currentQuote, favoriteBtn, favoritesContainer)
+favoriteBtn.addEventListener(
+  'click',
+  () => toggleFavorite(currentQuote, favoriteBtn, favoritesContainer)
+  // toggleFavorite({ Альтернативный вариант
+  //   quote: currentQuote,
+  //   btn: favoriteBtn,
+  //   container: favoritesContainer,
+  // })
 );
 
 const generateBtn = document.getElementById('generate-btn');

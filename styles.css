@@ -1,36 +1,64 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #333;
-  color: #fff;
+  background-color: #333; /* Dark background color */
+  color: white; /* Text color */
 }
 
 .container {
   max-width: 600px;
-  margin: 50px auto;
+  margin: 20px auto;
   text-align: center;
 }
 
+/* Base button styles */
 .btn {
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #007bff;
-  color: #fff;
+  color: white;
   border: none;
   cursor: pointer;
   border-radius: 10px;
 }
 
-.btn:hover {
+/* Primary button style */
+.btn-primary {
+  background-color: #007bff; /* Blue color */
+}
+
+.btn-primary:hover {
   background-color: #0056b3;
 }
 
-.quote {
-  font-style: italic;
+/* Danger button style */
+.btn-danger {
+  background-color: transparent;
+  color: red; /* Red text */
+  border: 2px solid red; /* Red border */
 }
 
-.quote::before,
-.quote::after {
+.btn-danger:hover {
+  background-color: red;
+  color: white;
+}
+
+.quote {
+  font-size: 1.2em;
+}
+
+.quote-text {
+  font-style: italic;
+  min-height: 2.3em; /* Ensure enough space for the quote text */
+  margin-block-end: 0.7em; /* Space between quote text and author */
+}
+
+.quote-text::before,
+.quote-text::after {
   content: '"';
+}
+
+.quote-author {
+  font-weight: bold;
+  margin-block-start: 0.7em; /* Space between quote text and author */
 }
 
 .favorites-container {
@@ -40,6 +68,8 @@ body {
 }
 
 .favorite-card {
+  display: flex;
+  flex-direction: column;
   background-color: #f9f9f9;
   color: darkslategray;
   padding: 10px 20px;
@@ -48,7 +78,12 @@ body {
   width: 25%; /* Adjust as needed */
 }
 
-.author {
+.favorite-card-content {
+  flex: 1;
+  padding: 0px 3px; /* Ensure the content takes full height */
+}
+
+.favorite-card-author {
   font-style: italic;
 }
 

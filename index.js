@@ -5,21 +5,14 @@ import { handleQuote } from './src/handlers/quote.js';
 let currentQuote = null;
 
 function setCurrentQuote(quote) {
-  // console.log(currentQuote);
   currentQuote = quote;
 }
 
 const favoritesContainer = document.getElementById('favorites-container');
-const favoriteBtn = document.getElementById('favorite-btn');
-hideFavoriteBtn(favoriteBtn);
-favoriteBtn.addEventListener(
-  'click',
-  () => toggleFavorite(currentQuote, favoriteBtn, favoritesContainer)
-  // toggleFavorite({ Альтернативный вариант
-  //   quote: currentQuote,
-  //   btn: favoriteBtn,
-  //   container: favoritesContainer,
-  // })
+const quoteFavoriteBtn = document.getElementById('quote-favorite-btn');
+hideFavoriteBtn();
+quoteFavoriteBtn.addEventListener('click', () =>
+  toggleFavorite(currentQuote, quoteFavoriteBtn, favoritesContainer)
 );
 
 const generateBtn = document.getElementById('generate-btn');
@@ -27,4 +20,4 @@ generateBtn.addEventListener('click', () =>
   handleQuote(quotes, setCurrentQuote)
 );
 
-export { favoriteBtn };
+export { quoteFavoriteBtn };

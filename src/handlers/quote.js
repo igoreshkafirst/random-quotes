@@ -2,17 +2,21 @@ import { generateRandomInt } from '../utils.js';
 import { handleFavorite } from './favorites.js';
 
 function handleQuote(quotes, setCurrentQuote) {
-  // console.log(quotes);
   const randomQuote = choseRandomQuote(quotes);
   setCurrentQuote(randomQuote);
   displayQuote(randomQuote);
 }
 
 function displayQuote(quote) {
-  const { text, author, isFavorite } = quote;
+  const { id, text, author, isFavorite } = quote;
   const quoteElement = document.getElementById('quote');
+  const quoteTextElement = document.getElementById('quote-text');
   const quoteAuthorElement = document.getElementById('quote-author');
-  quoteElement.textContent = text;
+
+  // Current quote will have data-current-quote-id HTML attribute
+  quoteElement.dataset.currentQuoteId = id;
+  // quoteElement.dataset.testValue = 'abc';
+  quoteTextElement.textContent = text;
   quoteAuthorElement.textContent = author;
   handleFavorite(isFavorite);
 }

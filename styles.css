@@ -51,10 +51,10 @@ body {
   margin-block-end: 0.7em; /* Space between quote text and author */
 }
 
-.quote-text::before,
+/* .quote-text::before,
 .quote-text::after {
   content: '"';
-}
+} */
 
 .quote-author {
   font-weight: bold;

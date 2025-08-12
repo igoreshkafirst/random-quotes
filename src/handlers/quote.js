@@ -15,8 +15,7 @@ function displayQuote(quote) {
 
   // Current quote will have data-current-quote-id HTML attribute
   quoteElement.dataset.currentQuoteId = id;
-  // quoteElement.dataset.testValue = 'abc';
-  quoteTextElement.textContent = text;
+  quoteTextElement.textContent = `"${text}"`;
   quoteAuthorElement.textContent = author;
   handleFavorite(isFavorite);
 }
